@@ -6,13 +6,10 @@ import Image from "next/image";
 import ButtonApply from "../components/button";
 import jobDetail from "@/app/lib/services/endpoint/api/job-detail";
 
-async function getDataJob() {
-  const jobData = await jobDetail(2);
-  return jobData.data;
-}
 
-export default async function DetailDescription() {
-  const jobData = await getDataJob();
+
+export default async function DetailDescription({id}) {
+  const jobData = await jobDetail(id);
 
   return (
     <div className="w-full flex flex-col justify-start px-6 lg:px-24">
