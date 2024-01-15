@@ -4,13 +4,11 @@ import { bgHeroDetail } from "@/app/lib/utils/svg";
 import jobDetail from "@/app/lib/services/endpoint/api/job-detail";
 
 
-async function getDataJob() {
-  const jobData = await jobDetail(2);
-  return jobData.data;
-}
 
-export default async function DetailHero() {
-  const dataJob = await getDataJob();
+
+export default async function DetailHero({id}) {
+  const dataJob = await jobDetail(id);
+
   return (
     <div className=" w-full  flex items-center justify-start ">
       <Image

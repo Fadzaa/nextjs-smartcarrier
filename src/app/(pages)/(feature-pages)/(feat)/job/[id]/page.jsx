@@ -5,13 +5,12 @@ import jobDetail from "@/app/lib/services/endpoint/api/job-detail";
 
 export default async function DetailPage({params}) {
     const id = params.id;
-    const fetchJob = await jobDetail(id)
+
 
     return(
         <>
-            Tes{id}
-            <DetailHero />
-            <DetailDescription/>
+            <DetailHero id={id} />
+            <DetailDescription id={id}/>
         </>
     );
 }
